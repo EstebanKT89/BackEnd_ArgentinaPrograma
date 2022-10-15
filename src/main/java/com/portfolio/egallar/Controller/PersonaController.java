@@ -61,7 +61,7 @@ public class PersonaController {
         }
         Persona persona = new Persona(dtoPersona.getNombre(),dtoPersona.getApellido(), dtoPersona.getDescripcion(), dtoPersona.getImg());
         impPersonaService.save(persona);
-        return new ResponseEntity(new Mensaje("Educación creada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje(" La persona fue creada"), HttpStatus.OK);
     }
     
     @PutMapping("/update/{id}")
