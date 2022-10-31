@@ -13,18 +13,16 @@ public class DtoProyectos {
     private String descripcionProyec;
 
     private String linkProyec;
-    private String imgCap;
 
     //Constructores
     public DtoProyectos() {
     }
 
-    public DtoProyectos(String nombreProyec, Date fecha, String descripcionProyec, String linkProyec, String imgCap) {
+    public DtoProyectos(String nombreProyec, Date fecha, String descripcionProyec, String linkProyec) {
         this.nombreProyec = nombreProyec;
         this.fecha = fecha;
         this.descripcionProyec = descripcionProyec;
         this.linkProyec = linkProyec;
-        this.imgCap = imgCap;
     }
     
     //Getters y Setters
@@ -60,14 +58,4 @@ public class DtoProyectos {
     public void setLinkProyec(String linkProyec) {
         this.linkProyec = linkProyec;
     }
-
-    public String getImgCap() {
-        return imgCap;
-    }
-
-    public void setImgCap(String imgCap) {
-        this.imgCap = imgCap;
-    }
-    
-    
-}
+ }

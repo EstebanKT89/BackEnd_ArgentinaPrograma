@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Proyectos {
@@ -12,23 +13,24 @@ public class Proyectos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
+    @NotNull
     private String nombreProyec;
+    @NotNull
     private Date fecha;
+    @NotNull
     private String descripcionProyec;
     private String linkProyec;
-    private String imgCap;
     
     
     //Constructores
     public Proyectos() {
     }
 
-    public Proyectos(String nombreProyec, Date fecha, String descripcionProyec, String linkProyec, String imgCap) {
+    public Proyectos(String nombreProyec, Date fecha, String descripcionProyec, String linkProyec) {
         this.nombreProyec = nombreProyec;
         this.fecha = fecha;
         this.descripcionProyec = descripcionProyec;
         this.linkProyec = linkProyec;
-        this.imgCap = imgCap;
     }
     
     
@@ -73,12 +75,6 @@ public class Proyectos {
         this.linkProyec = linkProyec;
     }
 
-    public String getImgCap() {
-        return imgCap;
-    }
 
-    public void setImgCap(String imgCap) {
-        this.imgCap = imgCap;
-    }
     
 }

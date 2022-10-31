@@ -25,6 +25,9 @@ public class Persona {
     private String apellido;
     
     @NotNull
+    private String profesion;
+    
+    @NotNull
     private String descripcion;
 
     
@@ -34,9 +37,10 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, String descripcion, String img) {
+    public Persona(String nombre, String apellido, String profesion, String descripcion, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.profesion = profesion;
         this.descripcion = descripcion;
         this.img = img;
     }
@@ -79,6 +83,14 @@ public class Persona {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getProfesion() {
+        return profesion;
+    }
+
+    public void setProfesion(String profesion) {
+        this.profesion = profesion;
     }
 
     

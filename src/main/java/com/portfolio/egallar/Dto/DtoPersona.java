@@ -6,6 +6,7 @@
 package com.portfolio.egallar.Dto;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -17,6 +18,8 @@ public class DtoPersona {
     private String nombre;
     @NotBlank
     private String apellido;
+    @NotNull
+    private String profesion;    
     @NotBlank
     private String descripcion;
     @NotBlank
@@ -25,9 +28,10 @@ public class DtoPersona {
     public DtoPersona() {
     }
 
-    public DtoPersona(String nombre, String apellido, String descripcion, String img) {
+    public DtoPersona(String nombre, String apellido, String profesion, String descripcion, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.profesion = profesion;
         this.descripcion = descripcion;
         this.img = img;
     }
@@ -62,6 +66,14 @@ public class DtoPersona {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public String getProfesion() {
+        return profesion;
+    }
+
+    public void setProfesion(String profesion) {
+        this.profesion = profesion;
     }
     
     

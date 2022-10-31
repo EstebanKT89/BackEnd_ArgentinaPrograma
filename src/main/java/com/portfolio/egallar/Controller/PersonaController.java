@@ -56,10 +56,13 @@ public class PersonaController {
         if(StringUtils.isBlank(dtoPersona.getNombre())){
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
+        if(StringUtils.isBlank(dtoPersona.getApellido())){
+            return new ResponseEntity(new Mensaje("El apellido es obligatorio"), HttpStatus.BAD_REQUEST);
+        }
         if(impPersonaService.existsByNombre(dtoPersona.getNombre())){
             return new ResponseEntity(new Mensaje("El nombre ingresado ya existe"), HttpStatus.BAD_REQUEST);
         }
-        Persona persona = new Persona(dtoPersona.getNombre(),dtoPersona.getApellido(), dtoPersona.getDescripcion(), dtoPersona.getImg());
+        Persona persona = new Persona(dtoPersona.getNombre(),dtoPersona.getApellido(),dtoPersona.getProfesion(), dtoPersona.getDescripcion(), dtoPersona.getImg());
         impPersonaService.save(persona);
         return new ResponseEntity(new Mensaje(" La persona fue creada"), HttpStatus.OK);
     }
@@ -81,6 +84,7 @@ public class PersonaController {
         
         persona.setNombre(dtoPersona.getNombre());
         persona.setApellido(dtoPersona.getApellido());
+        persona.setProfesion(dtoPersona.getProfesion());
         persona.setDescripcion(dtoPersona.getDescripcion());
         persona.setImg(dtoPersona.getImg());
         
